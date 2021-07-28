@@ -51,6 +51,7 @@ covid_data['recovered'] = covid_data['recovered'].fillna(0)
 
 covid_data['active'] = covid_data['confirmed'] - (covid_data['deaths']+covid_data['recovered'])
 
+covid_data_1 = covid_data.groupby(['date'])[['confirmed','deaths','recovered','active']].sum().reset_index()
 #######################################################################################################################
 #                                       DASHBOARD
 #######################################################################################################################
@@ -84,7 +85,17 @@ app.layout = html.Div([
     ], id='header', className='row flex-display', style={'margin-bottom': '25px'}),
 
     html.Div([
-        html.Div([], className='card_container three columns')
+        html.Div([
+            html.H6(children='Global cases',
+                    style= {'textAlign':'center',
+                            'color': 'white'}),
+            html.P(f"{covid_data_1['confirmed'].iloc[-1]:.0f}",
+                   style={'textAlign': 'center',
+                          'color': 'orange',
+                          'fontSize':40}
+        )
+
+        ], className='card_container three columns')
     ], className='row flex display')
 ], id='mainContainer',style={'display': 'flex', 'flex-direction':'column'})
 
