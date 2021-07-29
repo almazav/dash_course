@@ -8,7 +8,7 @@ body {
 .card_container {
   border-radius: 5px;
   background-color: #1f2c56;
-  margin: 16px;
+  margin: 10px;
   padding: 15px;
   position: relative;
   box-shadow: 2px 2px 2px #1f2c56;
@@ -82,8 +82,9 @@ font-size: 20px;
   display: flex;
   flex-direction: column;
 }
+/* scroll bar stile */
 
-.Select-control, .Select-menu-outer, .Select-multi-value-wrapper, .select-up, .is-open .Select-control {
+/*.Select-control, .Select-menu-outer, .Select-multi-value-wrapper, .select-up, .is-open .Select-control {
   background-color: #1f2c56;
   color: white;
 
@@ -96,7 +97,7 @@ font-size: 20px;
 .has-value.Select--single>.Select-control .Select-value .Select-value-label, .has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label {
   color: white;
 }
-
+*/
 /* width */
 ::-webkit-scrollbar {
   width: 10px !important;
